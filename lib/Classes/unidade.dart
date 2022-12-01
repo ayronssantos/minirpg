@@ -1,14 +1,27 @@
-class Unidade {
+abstract class Unidade {
   late String _nome;
   late double _health;
+  late double healthN;
   late double _attack;
   late double _speed;
 
-  Unidade(this._nome, this._health, this._attack, this._speed) {
-    _nome = _nome;
-    _health = _health;
-    _attack = _attack;
-    _speed = _speed;
+  double getHealth() => _health;
+
+  Unidade(this._nome, this._health, this._attack, this._speed, this.healthN);
+
+  void receberDano(double dano) {
+    dano = _attack;
+    if (healthN - dano <= 0) {
+      healthN = 0;
+    } else if (healthN - dano >= _health) {
+      healthN = healthN;
+    } else {
+      healthN = healthN - dano;
+    }
+  }
+
+  void atacarAlvo(Unidade unidade) {
+    unidade.atacarAlvo(receberDano(_attack));
   }
 
   @override

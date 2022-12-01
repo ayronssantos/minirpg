@@ -5,10 +5,10 @@ class Unidade {
   late double _speed;
 
   Unidade(this._nome, this._health, this._attack, this._speed) {
-    _nome = nome;
-    _health = health;
-    _attack = attack;
-    _speed;
+    _nome = _nome;
+    _health = _health;
+    _attack = _attack;
+    _speed = _speed;
   }
 
   @override
